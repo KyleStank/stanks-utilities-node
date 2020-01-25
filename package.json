@@ -1,6 +1,6 @@
 {
   "name": "stanks-utilities-node",
-  "version": "1.0.0",
+  "version": "1.0.1-0",
   "description": "Small collection of operations that I frequently use.",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -19,8 +19,8 @@
   "author": "Kyle Stankovich",
   "license": "GPL-3.0-or-later",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/KyleStank/stanks-utilities-node.git"
+    "type": "git",
+    "url": "https://github.com/KyleStank/stanks-utilities-node.git"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.3",
