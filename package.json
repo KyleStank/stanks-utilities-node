@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\"",
     "lint": "tsc --noEmit && eslint ./src --ext .ts",
     "start": "npm run prod",
     "server": "babel-node ./src/index --extensions .ts",
@@ -17,6 +18,10 @@
   },
   "author": "Kyle Stankovich",
   "license": "GPL-3.0-or-later",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/KyleStank/stanks-utilities-node.git"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
