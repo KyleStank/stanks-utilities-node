@@ -6,6 +6,9 @@
   "module": "./lib/index.es.js",
   "jsnext:main": "./lib/index.es.js",
   "types": "./@types/index.d.ts",
+  "files": [
+    "/lib"
+  ],
   "scripts": {
     "build": "npm-run-all clean lint build:rollup",
     "build:rollup": "rollup -c",
