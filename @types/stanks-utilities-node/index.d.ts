@@ -1,5 +1,13 @@
 declare module 'stanks-utilities-node' {
   /**
+   * Small interface for defining miscellaneous metadata with a value of type T.
+   */
+  export interface IMetadata<T> {
+    key:   string;
+    value: T;
+  }
+
+  /**
    * Collection of utilities that are commonly used.
    */
   export class CommonUtils {
@@ -75,6 +83,6 @@ declare module 'stanks-utilities-node' {
     /**
      * Parse a URL and returns all of the parameters in it.
      */
-    static getUrlVars(url: string): object;
+    static getUrlVars(url: string): Array<IMetadata<string>>;
   }
 }
