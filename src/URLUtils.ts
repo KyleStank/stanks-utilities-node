@@ -1,3 +1,4 @@
+import { CommonUtils } from './CommonUtils';
 import { IMetadata } from './Interfaces';
 
 /**
@@ -8,6 +9,10 @@ export class URLUtils {
    * Parse a URL and returns all of the parameters in it.
    */
   static getUrlVars(url: string): Array<IMetadata<string>> {
+    if (CommonUtils.isNull(url)) {
+      return [] as Array<IMetadata<string>>;
+    }
+
     const urlVars: Array<IMetadata<string>> = [] as Array<IMetadata<string>>;
 
     // Find every URL parameter with REGEX.

@@ -13,7 +13,7 @@ export class IOUtils {
    * @returns {boolean} True if given path exists. False otherwise.
    */
   static exists(path: string): boolean {
-    return fs.existsSync(path);
+    return !CommonUtils.isNull(path) ? fs.existsSync(path) : false;
   }
 
   /**
@@ -23,7 +23,7 @@ export class IOUtils {
    * @returns {string} Contents of file.
    */
   static readFile(file: string): string {
-    return fs.readFileSync(file, 'utf8');
+    return !CommonUtils.isNull(file) ? fs.readFileSync(file, 'utf8') : '';
   }
 
   /**
@@ -35,7 +35,7 @@ export class IOUtils {
    */
   static writeJSONFile(file: string, data: object|null|undefined): boolean {
     // If data is null, return false.
-    if (CommonUtils.isNull(data)) {
+    if (CommonUtils.isNull(file) || CommonUtils.isNull(data)) {
       return false;
     }
 

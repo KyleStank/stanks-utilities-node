@@ -10,7 +10,7 @@ export class CommonUtils {
    * @param {T|null|undefined} obj Value to check.
    * @returns {boolean} True if the provided object is null or undefined. Otherwise, false.
    */
-  static isNull<T>(obj: T|null|undefined): boolean {
+  static isNull<T>(obj: T): boolean {
     return obj === null || obj === undefined;
   }
 
@@ -21,7 +21,7 @@ export class CommonUtils {
    * @returns {string} String without spaces.
    */
   static removeSpaces(str: string): string {
-    return str.replace(/\s/g, '');
+    return !CommonUtils.isNull(str) ? str.replace(/\s/g, '') : '';
   }
 
   /**
@@ -31,7 +31,7 @@ export class CommonUtils {
    * @returns {string} True if given string is empty. False otherwise.
    */
   static isEmpty(str: string): boolean {
-    return CommonUtils.removeSpaces(str).length <= 0;
+    return !CommonUtils.isNull(str) ? CommonUtils.removeSpaces(str).length <= 0 : false;
   }
 
   /**
@@ -41,6 +41,6 @@ export class CommonUtils {
    * @returns {number} Number of properties on given object.
    */
   static getObjectPropsLength(obj: object): number {
-    return Object.keys(obj).length;
+    return !CommonUtils.isNull(obj) ? Object.keys(obj).length : 0;
   }
 }
