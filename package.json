@@ -4,17 +4,12 @@
   "description": "Small collection of operations that I frequently use.",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js",
-  "jsnext:main": "./lib/index.es.js",
-  "types": "./@types/index.d.ts",
-  "files": [
-    "/lib",
-    "/@types"
-  ],
+  "typings": "./lib/index.d.ts",
   "scripts": {
     "build": "npm-run-all clean lint build:rollup",
     "build:rollup": "rollup -c",
     "clean": "rimraf lib",
-    "lint": "tsc --noEmit && eslint ./src ./@types --ext .ts,.d.ts",
+    "lint": "tsc --noEmit && eslint ./src --ext .ts,.d.ts",
     "test": "echo \"Error: no test specified\"",
     "watch": "nodemon --exec \"npm run lint\" --watch ./src --ext .ts,.d.ts"
   },
